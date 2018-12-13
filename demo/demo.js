@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import Tree, { TreeNode } from '../src';
+import MyTree from '../src/myTree';
 import './demo.less';
 
 const treeData = [
@@ -31,7 +32,7 @@ class Demo extends React.Component {
     keys: PropTypes.array
   };
   static defaultProps = {
-    keys: ['0-0-0-0']
+    keys: ['0-0']
   };
   constructor(props) {
     super(props);
@@ -43,7 +44,7 @@ class Demo extends React.Component {
     };
   }
   onExpand = expandedKeys => {
-    // console.log('onExpand', expandedKeys, arguments);
+    console.log('onExpand', expandedKeys);
   };
   onSelect = (selectedKeys, info) => {
     console.log('selected', selectedKeys, info);
@@ -52,21 +53,27 @@ class Demo extends React.Component {
   onCheck = (checkedKeys, info) => {
     console.log('onCheck', checkedKeys, info);
   };
+  onDragStart = e => {
+    console.log(e);
+  };
   render() {
     return (
       <div style={{ margin: '0 20px' }}>
         <h2>simple</h2>
+        <MyTree treeData={treeData} />
         <Tree
           className="myCls"
           showLine
           checkable
           selectable={false}
-          defaultExpandAll
+          draggable
           onExpand={this.onExpand}
+          defaultExpandedKeys={this.state.defaultExpandedKeys}
           defaultSelectedKeys={this.state.defaultSelectedKeys}
           defaultCheckedKeys={this.state.defaultCheckedKeys}
           onSelect={this.onSelect}
           onCheck={this.onCheck}
+          onDragStart={this.onDragStart}
           treeData={treeData}
         />
       </div>
