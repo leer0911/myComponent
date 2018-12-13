@@ -1,0 +1,25 @@
+{
+  "name": "mycomponent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./demo/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.1",
+    "@babel/plugin-transform-react-jsx": "^7.2.0",
+    "less": "^3.9.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "prop-types": "^15.6.2",
+    "rc-animate": "^2.6.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "warning": "^4.0.2"
+  }
+}
