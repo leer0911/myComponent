@@ -82,10 +82,6 @@ export function traverseTreeNodes(treeNodes, callback) {
   processNode(null);
 }
 
-/**
- * Use `rc-util` `Array.from` to get the children list which keeps the key.
- * And return single node if children is only one(This can avoid `key` missing check).
- */
 export function mapChildren(children, func) {
   const list = Array.from(children).map(func);
   if (list.length === 1) {

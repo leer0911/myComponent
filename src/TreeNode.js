@@ -534,9 +534,11 @@ class TreeNode extends React.Component {
       halfChecked,
       ...otherProps
     } = this.props;
+
     const {
       rcTree: { prefixCls, filterTreeNode, draggable }
     } = this.context;
+
     const disabled = this.isDisabled();
     const dataOrAriaAttributeProps = getDataAndAria(otherProps);
 

@@ -21,7 +21,6 @@ import {
   conductCheck,
   warnOnlyTreeNode
 } from './util';
-
 class Tree extends React.Component {
   static propTypes = {
     prefixCls: PropTypes.string,
@@ -698,6 +697,7 @@ class Tree extends React.Component {
       dragOverNodeKey,
       dropPosition
     } = this.state;
+
     const pos = getPosition(level, index);
     const key = child.key || pos;
 
@@ -733,6 +733,7 @@ class Tree extends React.Component {
       showLine,
       tabIndex = 0
     } = this.props;
+
     const domProps = getDataAndAria(this.props);
 
     if (focusable) {
