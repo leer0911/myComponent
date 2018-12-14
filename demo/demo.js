@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import Tree, { TreeNode } from '../src';
-import MyTree from '../my-tree/Tree';
+import Tree, { TreeNode } from '../rc-tree';
+import MyTree from '../src/Tree';
 import './demo.less';
 
 const treeData = [
