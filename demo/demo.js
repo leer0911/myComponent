@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import Tree, { TreeNode } from '../src';
-import MyTree from '../src/myTree';
+import MyTree from '../my-tree/Tree';
 import './demo.less';
 
 const treeData = [
@@ -32,7 +32,7 @@ class Demo extends React.Component {
     keys: PropTypes.array
   };
   static defaultProps = {
-    keys: ['0-0']
+    keys: ['0-0-1']
   };
   constructor(props) {
     super(props);
@@ -59,8 +59,15 @@ class Demo extends React.Component {
   render() {
     return (
       <div style={{ margin: '0 20px' }}>
-        <h2>simple</h2>
-        <MyTree treeData={treeData} />
+        <h2>my-tree</h2>
+
+        <MyTree
+          treeData={treeData}
+          defaultExpandParent
+          defaultExpandedKeys={this.state.defaultExpandedKeys}
+        />
+
+        <h2>rc-tree</h2>
         <Tree
           className="myCls"
           showLine

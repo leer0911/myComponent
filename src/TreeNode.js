@@ -268,7 +268,6 @@ class TreeNode extends React.Component {
     if (isLeaf === false) {
       return false;
     }
-
     return (
       isLeaf ||
       (!loadData && !hasChildren) ||

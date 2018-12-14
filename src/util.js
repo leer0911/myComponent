@@ -59,7 +59,6 @@ export function traverseTreeNodes(treeNodes, callback) {
 
     // Filter children
     const childList = getNodeChildren(children);
-
     // Process node if is not root
     if (node) {
       const data = {
