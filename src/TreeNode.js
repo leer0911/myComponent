@@ -7,12 +7,6 @@ export default class MyTreeNode extends React.Component {
     onNodeExpand: PropTypes.func,
     renderTreeNode: PropTypes.func
   };
-  getNodeChildren = () => {
-    const { children } = this.props;
-    const originList = Array.from(children).filter(node => node);
-    const targetList = getNodeChildren(originList);
-    return targetList;
-  };
   renderChildren = children => {
     const { expanded } = this.props;
     const { renderTreeNode } = this.context;

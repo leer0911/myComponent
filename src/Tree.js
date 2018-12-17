@@ -10,6 +10,7 @@ import {
 
 export default class MyTree extends React.Component {
   static propTypes = {
+    treeData: PropTypes.array,
     autoExpandParent: PropTypes.bool,
     defaultExpandAll: PropTypes.bool,
     defaultExpandParent: PropTypes.bool,
@@ -20,16 +21,19 @@ export default class MyTree extends React.Component {
     treeNode: [],
     expandedKeys: []
   };
+
   static childContextTypes = {
     onNodeExpand: PropTypes.func,
     renderTreeNode: PropTypes.func
   };
+
   getChildContext() {
     return {
       onNodeExpand: this.onNodeExpand,
       renderTreeNode: this.renderTreeNode
     };
   }
+
   static getDerivedStateFromProps(props, prevState) {
     const { treeData } = props;
     const { prevProps } = prevState;
@@ -88,6 +92,7 @@ export default class MyTree extends React.Component {
 
     return newState;
   }
+
   onNodeExpand = (e, treeNode) => {
     let { expandedKeys } = this.state;
     const { expanded, eventKey } = treeNode.props;
@@ -100,6 +105,7 @@ export default class MyTree extends React.Component {
     }
     this.setUncontrolledState({ expandedKeys });
   };
+
   setUncontrolledState = state => {
     let needSync = false;
     const newState = {};
@@ -115,6 +121,7 @@ export default class MyTree extends React.Component {
       this.setState(newState);
     }
   };
+
   renderTreeNode = child => {
     const { expandedKeys = [] } = this.state;
     const key = child.key || pos;
@@ -124,6 +131,7 @@ export default class MyTree extends React.Component {
       expanded: expandedKeys.indexOf(key) !== -1
     });
   };
+
   render() {
     const { treeNode } = this.state;
     return (

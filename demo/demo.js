@@ -63,7 +63,6 @@ class Demo extends React.Component {
 
         <MyTree
           treeData={treeData}
-          defaultExpandParent
           defaultExpandedKeys={this.state.defaultExpandedKeys}
         />
 
